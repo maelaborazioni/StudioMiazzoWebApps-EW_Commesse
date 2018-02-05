@@ -1,0 +1,12 @@
+allowCreationRelatedRecords:true,
+allowParentDeleteWhenHavingRelatedRecords:false,
+deleteRelatedRecords:true,
+foreignDataSource:"db:/ma_anagrafiche/lavoratori_commesse",
+items:[
+{foreignColumnName:"iddittacommessafase",primaryDataProviderID:"iddittacommessafase",typeid:23,uuid:"5D91223B-089A-4919-81B1-94001B8E2F34"}
+],
+joinType:1,
+name:"ditte_commesse_fasi_to_lavoratori_commesse",
+primaryDataSource:"db:/ma_anagrafiche/ditte_commesse_fasi",
+typeid:22,
+uuid:"3DBE0008-AEF2-4C21-A7D9-7BDAE6C13E60"

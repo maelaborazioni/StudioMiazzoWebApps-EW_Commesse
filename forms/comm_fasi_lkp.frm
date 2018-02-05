@@ -1,0 +1,15 @@
+dataSource:"db:/ma_anagrafiche/ditte_commesse_fasi",
+encapsulation:60,
+items:[
+{
+height:1,
+partType:5,
+typeid:19,
+uuid:"EA00925D-815E-4CD6-A29C-6918A35BB55B"
+}
+],
+name:"comm_fasi_lkp",
+showInMenu:true,
+styleName:"leaf_style",
+typeid:3,
+uuid:"C1BF3423-C5AB-4260-93A9-13CA3EC89989"

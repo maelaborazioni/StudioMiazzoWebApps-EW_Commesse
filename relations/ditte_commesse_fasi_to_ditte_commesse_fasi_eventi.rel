@@ -1,0 +1,11 @@
+allowCreationRelatedRecords:true,
+deleteRelatedRecords:true,
+foreignDataSource:"db:/ma_anagrafiche/ditte_commesse_fasi_eventi",
+items:[
+{foreignColumnName:"iddittacommessafase",primaryDataProviderID:"iddittacommessafase",typeid:23,uuid:"E8D0F944-491D-4999-8FB8-4831653550D5"}
+],
+joinType:1,
+name:"ditte_commesse_fasi_to_ditte_commesse_fasi_eventi",
+primaryDataSource:"db:/ma_anagrafiche/ditte_commesse_fasi",
+typeid:22,
+uuid:"FCF968F0-DF6C-47E8-9DF7-F3E1E4AD1A5C"

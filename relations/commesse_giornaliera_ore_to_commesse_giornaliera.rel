@@ -1,0 +1,9 @@
+foreignDataSource:"db:/ma_presenze/commesse_giornaliera",
+items:[
+{foreignColumnName:"idcommessagiornaliera",primaryDataProviderID:"idcommessagiornaliera",typeid:23,uuid:"013BA8F2-A602-4217-9EA7-0CD32AF4207D"}
+],
+joinType:1,
+name:"commesse_giornaliera_ore_to_commesse_giornaliera",
+primaryDataSource:"db:/ma_presenze/commesse_giornaliera_ore",
+typeid:22,
+uuid:"EAD2F496-0FDD-4B5B-99A9-E475DE7336DD"

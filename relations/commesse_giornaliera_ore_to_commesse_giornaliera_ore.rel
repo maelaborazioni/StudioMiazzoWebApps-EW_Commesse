@@ -1,0 +1,8 @@
+allowCreationRelatedRecords:true,
+deleteRelatedRecords:true,
+foreignDataSource:"db:/ma_presenze/commesse_giornaliera_ore",
+joinType:1,
+name:"commesse_giornaliera_ore_to_commesse_giornaliera_ore",
+primaryDataSource:"db:/ma_presenze/commesse_giornaliera_ore",
+typeid:22,
+uuid:"1B6F0A90-CC4C-4AA8-8AF6-7E9192C22372"

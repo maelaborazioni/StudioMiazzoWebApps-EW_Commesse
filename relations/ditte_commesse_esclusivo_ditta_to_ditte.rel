@@ -1,0 +1,9 @@
+foreignDataSource:"db:/ma_anagrafiche/ditte",
+items:[
+{foreignColumnName:"idditta",primaryDataProviderID:"iddittaesclusiva",typeid:23,uuid:"18542523-73D6-499A-9A4B-0B3B22685DB9"}
+],
+joinType:1,
+name:"ditte_commesse_esclusivo_ditta_to_ditte",
+primaryDataSource:"db:/ma_anagrafiche/ditte_commesse",
+typeid:22,
+uuid:"B775FCBE-870A-4745-BAC5-A2FDEF4E2261"

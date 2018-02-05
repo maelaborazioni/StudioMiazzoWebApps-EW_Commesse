@@ -1,0 +1,9 @@
+foreignDataSource:"db:/ma_anagrafiche/lavoratori",
+items:[
+{foreignColumnName:"idlavoratore",primaryDataProviderID:"terminatada",typeid:23,uuid:"94AA05B1-CCE3-4EDA-947B-8F679000BFAA"}
+],
+joinType:1,
+name:"ditte_commesse_fasi_to_lavoratori",
+primaryDataSource:"db:/ma_anagrafiche/ditte_commesse_fasi",
+typeid:22,
+uuid:"219FFC8C-13B9-4CAE-B792-592BD40867E3"

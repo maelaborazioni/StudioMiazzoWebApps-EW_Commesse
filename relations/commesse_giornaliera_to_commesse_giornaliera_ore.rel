@@ -1,0 +1,12 @@
+allowCreationRelatedRecords:true,
+allowParentDeleteWhenHavingRelatedRecords:false,
+deleteRelatedRecords:true,
+foreignDataSource:"db:/ma_presenze/commesse_giornaliera_ore",
+items:[
+{foreignColumnName:"idcommessagiornaliera",primaryDataProviderID:"idcommessagiornaliera",typeid:23,uuid:"697A1A2C-EA11-4459-AE08-B7C82FA6C61F"}
+],
+joinType:1,
+name:"commesse_giornaliera_to_commesse_giornaliera_ore",
+primaryDataSource:"db:/ma_presenze/commesse_giornaliera",
+typeid:22,
+uuid:"5CE8A414-38B0-4F5A-B552-13B82503BE5D"

@@ -1,0 +1,12 @@
+addEmptyValue:1,
+dataProviderID1:"iddittacommessa",
+dataProviderID2:"codice",
+dataProviderID3:"descrizione",
+dataSource:"db:/ma_anagrafiche/ditte_commesse",
+name:"vls_commesse",
+returnDataProviders:1,
+separator:"  - ",
+showDataProviders:6,
+typeid:34,
+uuid:"BAD56C5F-635A-44B0-BB07-021EBC80460C",
+valueListType:1

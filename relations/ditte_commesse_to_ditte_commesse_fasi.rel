@@ -1,0 +1,12 @@
+allowCreationRelatedRecords:true,
+allowParentDeleteWhenHavingRelatedRecords:false,
+deleteRelatedRecords:true,
+foreignDataSource:"db:/ma_anagrafiche/ditte_commesse_fasi",
+items:[
+{foreignColumnName:"iddittacommessa",primaryDataProviderID:"iddittacommessa",typeid:23,uuid:"F580736C-119E-408F-93E0-706F8DD073BB"}
+],
+joinType:1,
+name:"ditte_commesse_to_ditte_commesse_fasi",
+primaryDataSource:"db:/ma_anagrafiche/ditte_commesse",
+typeid:22,
+uuid:"6BF414BA-508D-4BAE-88B2-D47D760C4A13"

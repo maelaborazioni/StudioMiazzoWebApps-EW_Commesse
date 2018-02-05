@@ -1,0 +1,11 @@
+allowCreationRelatedRecords:true,
+allowParentDeleteWhenHavingRelatedRecords:false,
+deleteRelatedRecords:true,
+foreignDataSource:"db:/ma_anagrafiche/ditte_commesse",
+items:[
+{foreignColumnName:"idditta",primaryDataProviderID:"idditta",typeid:23,uuid:"79251538-2E63-4DCB-84F5-9189277C3F16"}
+],
+name:"ditte_to_ditte_commesse",
+primaryDataSource:"db:/ma_anagrafiche/ditte",
+typeid:22,
+uuid:"8A5D6CF4-5007-49A0-8D14-BD48F64D791D"

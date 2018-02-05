@@ -1,0 +1,11 @@
+allowCreationRelatedRecords:true,
+allowParentDeleteWhenHavingRelatedRecords:false,
+deleteRelatedRecords:true,
+foreignDataSource:"db:/ma_presenze/commesse_giornaliera_timbrature",
+items:[
+{foreignColumnName:"idcommessagiornaliera",primaryDataProviderID:"idcommessagiornaliera",typeid:23,uuid:"E54B69CC-BC92-44E3-A28B-87838DF9224D"}
+],
+name:"commesse_giornaliera_to_commesse_giornaliera_timbrature",
+primaryDataSource:"db:/ma_presenze/commesse_giornaliera",
+typeid:22,
+uuid:"359980CB-08F9-489A-8085-DD3DD20DCE31"

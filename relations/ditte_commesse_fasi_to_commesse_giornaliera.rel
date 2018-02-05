@@ -1,0 +1,11 @@
+allowCreationRelatedRecords:true,
+allowParentDeleteWhenHavingRelatedRecords:false,
+foreignDataSource:"db:/ma_presenze/commesse_giornaliera",
+items:[
+{foreignColumnName:"iddittacommessafase",primaryDataProviderID:"iddittacommessafase",typeid:23,uuid:"058CB814-F3C2-4825-AA1D-5ED1C6B6F612"}
+],
+joinType:1,
+name:"ditte_commesse_fasi_to_commesse_giornaliera",
+primaryDataSource:"db:/ma_anagrafiche/ditte_commesse_fasi",
+typeid:22,
+uuid:"F25E7525-B447-4E97-A433-B1E88554126E"

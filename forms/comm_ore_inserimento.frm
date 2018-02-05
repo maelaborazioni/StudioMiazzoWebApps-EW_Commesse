@@ -1,0 +1,14 @@
+encapsulation:44,
+items:[
+{
+height:266,
+partType:5,
+typeid:19,
+uuid:"492D4DC4-92CF-4441-9E97-3499B501EA0E"
+}
+],
+name:"comm_ore_inserimento",
+showInMenu:true,
+styleName:"leaf_style_table",
+typeid:3,
+uuid:"5982B594-3A80-4A84-B67B-FEA7666DA45A"

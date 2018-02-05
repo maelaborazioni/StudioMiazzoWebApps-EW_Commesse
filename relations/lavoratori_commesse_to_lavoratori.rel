@@ -1,0 +1,9 @@
+foreignDataSource:"db:/ma_anagrafiche/lavoratori",
+items:[
+{foreignColumnName:"idlavoratore",primaryDataProviderID:"idlavoratore",typeid:23,uuid:"02014E6A-793C-4D6D-9451-B33C6AD24A88"}
+],
+joinType:1,
+name:"lavoratori_commesse_to_lavoratori",
+primaryDataSource:"db:/ma_anagrafiche/lavoratori_commesse",
+typeid:22,
+uuid:"13DD0435-76AC-409D-BA44-CDA2934222F4"

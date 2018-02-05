@@ -1,0 +1,8 @@
+foreignDataSource:"db:/ma_presenze/commesse_giornaliera",
+items:[
+{foreignColumnName:"idcommessagiornaliera",primaryDataProviderID:"idcommessagiornaliera",typeid:23,uuid:"8C9C5E55-AA3A-4F7F-957B-245ABABC3F3D"}
+],
+name:"commesse_giornaliera_timbrature_to_commesse_giornaliera",
+primaryDataSource:"db:/ma_presenze/commesse_giornaliera_timbrature",
+typeid:22,
+uuid:"CDAF03C1-0DA1-4073-8BAE-1411136C91ED"
