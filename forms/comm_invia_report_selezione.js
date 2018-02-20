@@ -63,13 +63,13 @@ function onActionConferma(event)
 			msgText += ".<br/> Comunicare al responsabile la correttezza dei dati o le eventuali modifiche da apportare."
 			msgText += "</body></html>";
 			var success = plugins.mail.sendMail(mailAddress
-								                ,'Gestione commesse <assistenza@studiomiazzo.it>'
+								                ,'COmunicazione gestione commesse <assistenza@studiomiazzo.it>'
 												,'Rapporto ore inserite Gestione Commesse'
 												,msgText
 												,null
 												,null
 												,mailAttachment
-												,globals.setSendGridSmtpProperties());
+												,globals.setSparkPostSmtpProperties());
 			
 			if(!success)
 				globals.ma_utl_showWarningDialog('Impossibile recapitare al dipendente : ' + globals.getNominativo(arrLavSel[l]),'Invio report situazione commesse');
