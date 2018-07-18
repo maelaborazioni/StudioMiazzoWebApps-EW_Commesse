@@ -221,7 +221,7 @@ function onShowForm(firstShow, event, svyNavBaseOnShow)
 		vMeseAl = today.getMonth() + 1;
 	}
 	
-	/** @type {JSFoundset<db:/ma_anagrafiche/ditte_commesse>} */
+	/** @type {JSFoundSet<db:/ma_anagrafiche/ditte_commesse>} */
 	var fs = databaseManager.getFoundSet(globals.Server.MA_ANAGRAFICHE,globals.Table.DITTE_COMMESSE);
 	if(fs.find())
 	{

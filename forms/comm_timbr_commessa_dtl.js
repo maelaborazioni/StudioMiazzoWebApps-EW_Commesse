@@ -79,7 +79,7 @@ function confermaInserimento(event)
 		var recGcomm = globals.getGiornalieraCommessa(idLav, utils.dateFormat(giorno,globals.ISO_DATEFORMAT), idcommessagiornaliera);
 
 		if (!recGcomm) {
-			/** @type {JSFoundset<db:/ma_presenze/commesse_giornaliera>}*/
+			/** @type {JSFoundSet<db:/ma_presenze/commesse_giornaliera>}*/
 			var fsGiorn = databaseManager.getFoundSet(globals.Server.MA_PRESENZE, globals.Table.COMMESSE_GIORNALIERA);
 			/** @type {JSRecord<db:/ma_presenze/commesse_giornaliera>}*/
 			var recGiorn = databaseManager.getFoundSet(globals.Server.MA_PRESENZE, globals.Table.COMMESSE_GIORNALIERA);

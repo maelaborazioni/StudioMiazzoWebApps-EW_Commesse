@@ -197,7 +197,7 @@ function AggiornaDittaEsclusiva(_rec)
  */
 function onDataChangeDitta(oldValue, newValue, event)
 {
-	/** @type {JSFoundset<db:/ma_anagrafiche/ditte>} */
+	/** @type {JSFoundSet<db:/ma_anagrafiche/ditte>} */
 	var _foundset = databaseManager.getFoundSet(globals.Server.MA_ANAGRAFICHE,globals.Table.DITTE);
 	if(_foundset.find())
 	{

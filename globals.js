@@ -1062,7 +1062,7 @@ function saveRecordOreCommessa()
  * @properties={typeid:24,uuid:"E77F97B5-68FF-4689-B7B2-6AF2E374A1A7"}
  */
 function getDescrizioneCommessa(idDittaCommessa) {
-	/** @type {JSFoundset<db:/ma_anagrafiche/ditte_commesse>}*/
+	/** @type {JSFoundSet<db:/ma_anagrafiche/ditte_commesse>}*/
 	var fsComm = databaseManager.getFoundSet(globals.Server.MA_ANAGRAFICHE, globals.Table.DITTE_COMMESSE);
 	if (fsComm.find()) {
 		fsComm.iddittacommessa = idDittaCommessa;
@@ -1083,7 +1083,7 @@ function getDescrizioneCommessa(idDittaCommessa) {
  * @properties={typeid:24,uuid:"63B37F7C-E919-4538-8D69-945FB29D5EE1"}
  */
 function getDescrizioneFase(idDittaCommessaFase) {
-	/** @type {JSFoundset<db:/ma_anagrafiche/ditte_commesse_fasi>}*/
+	/** @type {JSFoundSet<db:/ma_anagrafiche/ditte_commesse_fasi>}*/
 	var fsCommFasi = databaseManager.getFoundSet(globals.Server.MA_ANAGRAFICHE, globals.Table.DITTE_COMMESSE_FASI);
 	if (fsCommFasi.find()) {
 		fsCommFasi.iddittacommessafase = idDittaCommessaFase;
@@ -1111,7 +1111,7 @@ function getDescrizioneFase(idDittaCommessaFase) {
  * @AllowToRunInFind
  */
 function getOreGiornoDipendenteFaseCommessa(idCommessaFase, idLavoratore, giorno, soloConsolidate, soloAutorizzate, soloFatturabili) {
-	/** @type {JSFoundset<db:/ma_presenze/commesse_giornaliera>} */
+	/** @type {JSFoundSet<db:/ma_presenze/commesse_giornaliera>} */
 	var fs = databaseManager.getFoundSet(globals.Server.MA_PRESENZE, globals.Table.COMMESSE_GIORNALIERA);
 	if (fs.find()) {
 		fs.iddittacommessafase = idCommessaFase;
@@ -1136,7 +1136,7 @@ function getOreGiornoDipendenteFaseCommessa(idCommessaFase, idLavoratore, giorno
  * Filtra i dipendenti selezionabili (all'interno della gestione commesse) in base alla commessa
  * al momento selezionata
  *
- * @param {JSFoundset<db:/ma_anagrafiche/lavoratori_commesse>} _fs
+ * @param {JSFoundSet<db:/ma_anagrafiche/lavoratori_commesse>} _fs
  *
  * @properties={typeid:24,uuid:"6B12D5BA-8843-4D7E-9816-5F62F9F3915C"}
  */
@@ -1199,7 +1199,7 @@ function validaGestioneCommesse(rec) {
 function isCodiceCommessaDisponibile(codiceCommessa, idDitta) 
 {
 	// verifica se il codice non sia stato precedentemente utilizzato per la stessa ditta
-	/** @type {JSFoundset<db:/ma_anagrafiche/ditte_commesse>} */
+	/** @type {JSFoundSet<db:/ma_anagrafiche/ditte_commesse>} */
 	var fsDitte = databaseManager.getFoundSet(globals.Server.MA_ANAGRAFICHE,globals.Table.DITTE);
     if(fsDitte.find())
     {
@@ -1575,7 +1575,7 @@ function resettaStatoOreSelezionate(_itemInd,_parItem,_isSel,_parMenTxt,_menuTxt
  */
 function gestioneTermineFase(_itemInd,_parItem,_isSel,_parMenTxt,_menuTxt,_event,idLavoratore,idFaseCommessa)
 {
-	/** @type{JSFoundset<db:/ma_anagrafiche/ditte_commesse_fasi>}*/
+	/** @type{JSFoundSet<db:/ma_anagrafiche/ditte_commesse_fasi>}*/
 	var fs = databaseManager.getFoundSet(globals.Server.MA_ANAGRAFICHE,globals.Table.DITTE_COMMESSE_FASI);
 	if(fs.find())
 	{
@@ -1618,7 +1618,7 @@ function gestioneTermineFase(_itemInd,_parItem,_isSel,_parMenTxt,_menuTxt,_event
 function gestioneRapportinoUtente(_itemInd,_parItem,_isSel,_parMenTxt,_menuTxt,_event,idLavoratore,giorno,idFaseCommessa)
 {
     var frm = forms.comm_ore_riepilogo;
-    /** @type {JSFoundset<db:/ma_presenze/commesse_giornaliera_ore>} */
+    /** @type {JSFoundSet<db:/ma_presenze/commesse_giornaliera_ore>} */
 	var fs = databaseManager.getFoundSet(globals.Server.MA_PRESENZE,globals.Table.COMMESSE_ORE);
 	if(fs.find())
 	{
@@ -1669,7 +1669,7 @@ function preparaTimbratureCommessePerCommessa(event, idLavoratore, idDittaCommes
 //	var colNames = ['giorno', 'nome_giorno', 'timbrature', 'ore'];
 //	var colTypes = [JSColumn.TEXT, JSColumn.TEXT, JSColumn.TEXT, JSColumn.NUMBER];
 //
-//	/** @type {JSFoundset<db:/ma_presenze/commesse_giornaliera>} */
+//	/** @type {JSFoundSet<db:/ma_presenze/commesse_giornaliera>} */
 //	var fsComm = databaseManager.getFoundSet(globals.Server.MA_PRESENZE, globals.Table.COMMESSE_GIORNALIERA);
 //	if (fsComm.find()) {
 //		fsComm.idlavoratore = idLavoratore;
@@ -1711,7 +1711,7 @@ function preparaTimbratureCommessePerCommessa(event, idLavoratore, idDittaCommes
  * @properties={typeid:24,uuid:"ED745189-AF14-4DCB-AD99-3619D4D84F3B"}
  */
 function getDittaCommessa(comm) {
-	/** @type {JSFoundset<db:/ma_anagrafiche/ditte_commesse>}*/
+	/** @type {JSFoundSet<db:/ma_anagrafiche/ditte_commesse>}*/
 	var fsDitteCommesse = databaseManager.getFoundSet(globals.Server.MA_ANAGRAFICHE, globals.Table.DITTE_COMMESSE);
 	if (fsDitteCommesse.find()) {
 		fsDitteCommesse.iddittacommessa = comm;
@@ -1733,7 +1733,7 @@ function getDittaCommessa(comm) {
  * @properties={typeid:24,uuid:"9C97EB03-0F12-446B-9C61-8036F244890E"}
  */
 function getDittaCommessaFase(commFase) {
-	/** @type {JSFoundset<db:/ma_anagrafiche/ditte_commesse_fasi>}*/
+	/** @type {JSFoundSet<db:/ma_anagrafiche/ditte_commesse_fasi>}*/
 	var fsDitteCommesseFasi = databaseManager.getFoundSet(globals.Server.MA_ANAGRAFICHE, globals.Table.DITTE_COMMESSE_FASI);
 	if (fsDitteCommesseFasi.find()) {
 		fsDitteCommesseFasi.iddittacommessafase = commFase;
@@ -1757,7 +1757,7 @@ function getDittaCommessaFase(commFase) {
  * @properties={typeid:24,uuid:"240BE7C3-11DC-4FD8-8B9E-3D6733206F98"}
  */
 function getDittaCommessaDaIdFase(commFase) {
-	/** @type {JSFoundset<db:/ma_anagrafiche/ditte_commesse_fasi>}*/
+	/** @type {JSFoundSet<db:/ma_anagrafiche/ditte_commesse_fasi>}*/
 	var fsDitteCommesseFasi = databaseManager.getFoundSet(globals.Server.MA_ANAGRAFICHE, globals.Table.DITTE_COMMESSE_FASI);
 	if (fsDitteCommesseFasi.find()) {
 		fsDitteCommesseFasi.iddittacommessafase = commFase;
@@ -1782,7 +1782,7 @@ function getDittaCommessaDaIdFase(commFase) {
  */
 function getDittaDaIdFase(commFase)
 {
-	/** @type {JSFoundset<db:/ma_anagrafiche/ditte_commesse_fasi>}*/
+	/** @type {JSFoundSet<db:/ma_anagrafiche/ditte_commesse_fasi>}*/
 	var fsDitteCommesseFasi = databaseManager.getFoundSet(globals.Server.MA_ANAGRAFICHE, globals.Table.DITTE_COMMESSE_FASI);
 	if (fsDitteCommesseFasi.find()) {
 		fsDitteCommesseFasi.iddittacommessafase = commFase;
@@ -1808,7 +1808,7 @@ function getDittaDaIdFase(commFase)
  */
 function getLavoratoriAssociatiFasiCommesse(arrCommesseFasi)
 {
-	/** @type {JSFoundset<db:/ma_anagrafiche/lavoratori_commesse>}*/
+	/** @type {JSFoundSet<db:/ma_anagrafiche/lavoratori_commesse>}*/
 	var fsLavComm = databaseManager.getFoundSet(globals.Server.MA_ANAGRAFICHE, globals.Table.LAVORATORI_COMMESSE);
 	if (fsLavComm.find())
 	{
@@ -1843,7 +1843,7 @@ function getLavoratoriAssociatiCommessa(idDittaCommessa)
 	var arrLavComm = [];
 	var arrLavFasi = [];
 	
-	/** @type {JSFoundset<db:/ma_anagrafiche/ditte_commesse>} */
+	/** @type {JSFoundSet<db:/ma_anagrafiche/ditte_commesse>} */
 	var fsDitteComm = databaseManager.getFoundSet(globals.Server.MA_ANAGRAFICHE,globals.Table.DITTE_COMMESSE);
 	if(fsDitteComm.find())
 	{
@@ -1886,7 +1886,7 @@ function getLavoratoriAssociatiCommessa(idDittaCommessa)
  * @properties={typeid:24,uuid:"6B520137-3699-4FF2-BBA7-0095B1A962CD"}
  */
 function getDittaEsclusivaCommessa(idDittaCommessa) {
-	/** @type {JSFoundset<db:/ma_anagrafiche/ditte_commesse>}*/
+	/** @type {JSFoundSet<db:/ma_anagrafiche/ditte_commesse>}*/
 	var fsComm = databaseManager.getFoundSet(globals.Server.MA_ANAGRAFICHE, globals.Table.DITTE_COMMESSE);
 	if (fsComm.find()) {
 		fsComm.iddittacommessa = idDittaCommessa;
@@ -1912,7 +1912,7 @@ function getDittaEsclusivaCommessa(idDittaCommessa) {
  */
 function getOreGiornoCommessa(giorno, idCommessa, soloAutorizzate, soloFatturabili) {
 	var totOreCommGiorno = 0;
-	/** @type {JSFoundset<db:/ma_anagrafiche/ditte_commesse_fasi>} */
+	/** @type {JSFoundSet<db:/ma_anagrafiche/ditte_commesse_fasi>} */
 	var fsCommFasi = databaseManager.getFoundSet(globals.Server.MA_ANAGRAFICHE, globals.Table.DITTE_COMMESSE);
 	if (fsCommFasi.find()) {
 		fsCommFasi.iddittacommessa = idCommessa;
@@ -1942,7 +1942,7 @@ function getOreGiornoCommessa(giorno, idCommessa, soloAutorizzate, soloFatturabi
  * @AllowToRunInFind
  */
 function getOreGiornoFaseCommessa(giorno, idCommessaFase, soloConsolidate, soloAutorizzate, soloFatturabili) {
-	/** @type {JSFoundset<db:/ma_presenze/commesse_giornaliera>} */
+	/** @type {JSFoundSet<db:/ma_presenze/commesse_giornaliera>} */
 	var fs = databaseManager.getFoundSet(globals.Server.MA_PRESENZE, globals.Table.COMMESSE_GIORNALIERA);
 	if (fs.find()) {
 		fs.iddittacommessafase = idCommessaFase;
@@ -1979,7 +1979,7 @@ function getOreGiornoFaseCommessa(giorno, idCommessaFase, soloConsolidate, soloA
 function getTotaleOreLavorateSuCommessa(idDittaCommessa, dal, al, soloConsolidate, soloAutorizzate, soloFatturabili) {
 	var totOre = null;
 
-	/** @type {JSFoundset<db:/ma_anagrafiche/ditte_commesse_fasi>} */
+	/** @type {JSFoundSet<db:/ma_anagrafiche/ditte_commesse_fasi>} */
 	var fsCommFasi = databaseManager.getFoundSet(globals.Server.MA_ANAGRAFICHE, globals.Table.DITTE_COMMESSE_FASI);
 	if (fsCommFasi.find()) {
 		fsCommFasi.iddittacommessa = idDittaCommessa;
@@ -2017,7 +2017,7 @@ function getTotaleOreLavorateSuFaseCommessa(idDittaCommessaFase, dal, al, soloCo
 {
 	var totOreFase = null;
 
-	/** @type {JSFoundset<db:/ma_presenze/commesse_giornaliera>}*/
+	/** @type {JSFoundSet<db:/ma_presenze/commesse_giornaliera>}*/
 	var fsCommGiorn = databaseManager.getFoundSet(globals.Server.MA_PRESENZE, globals.Table.COMMESSE_GIORNALIERA);
 	if (fsCommGiorn.find()) 
 	{
@@ -2077,7 +2077,7 @@ function getTotaleOreLavorateSuFaseCommessa(idDittaCommessaFase, dal, al, soloCo
  * @properties={typeid:24,uuid:"B6760B3D-5A05-43BB-96F9-1EC84D23EF94"}
  */
 function getDataInizialeCommessa(idDittaCommessa) {
-	/** @type {JSFoundset<db:/ma_anagrafiche/ditte_commesse>}*/
+	/** @type {JSFoundSet<db:/ma_anagrafiche/ditte_commesse>}*/
 	var fsDitteComm = databaseManager.getFoundSet(globals.Server.MA_ANAGRAFICHE, globals.Table.DITTE_COMMESSE);
 	if (fsDitteComm.find()) {
 		fsDitteComm.iddittacommessa = idDittaCommessa;
@@ -2098,7 +2098,7 @@ function getDataInizialeCommessa(idDittaCommessa) {
  * @properties={typeid:24,uuid:"B3DC58A9-AC8F-4BCF-A46D-BF35D93F76EE"}
  */
 function getDataInizialeFaseCommessa(idDittaCommessaFase) {
-	/** @type {JSFoundset<db:/ma_anagrafiche/ditte_commesse_fasi>}*/
+	/** @type {JSFoundSet<db:/ma_anagrafiche/ditte_commesse_fasi>}*/
 	var fsDitteCommFasi = databaseManager.getFoundSet(globals.Server.MA_ANAGRAFICHE, globals.Table.DITTE_COMMESSE_FASI);
 	if (fsDitteCommFasi.find()) {
 		fsDitteCommFasi.iddittacommessafase = idDittaCommessaFase;
@@ -2121,7 +2121,7 @@ function getDataInizialeFaseCommessa(idDittaCommessaFase) {
  * @properties={typeid:24,uuid:"E4F5EFC0-9A5B-45E8-8417-80C198020D56"}
  */
 function getDataFinaleCommessa(idDittaCommessa) {
-	/** @type {JSFoundset<db:/ma_anagrafiche/ditte_commesse>}*/
+	/** @type {JSFoundSet<db:/ma_anagrafiche/ditte_commesse>}*/
 	var fsDitteComm = databaseManager.getFoundSet(globals.Server.MA_ANAGRAFICHE, globals.Table.DITTE_COMMESSE);
 	if (fsDitteComm.find()) {
 		fsDitteComm.iddittacommessa = idDittaCommessa;
@@ -2142,7 +2142,7 @@ function getDataFinaleCommessa(idDittaCommessa) {
  * @properties={typeid:24,uuid:"4FBF9C4A-B557-4280-B597-B1502195DE00"}
  */
 function getDataFinaleFaseCommessa(idDittaCommessaFase) {
-	/** @type {JSFoundset<db:/ma_anagrafiche/ditte_commesse_fasi>}*/
+	/** @type {JSFoundSet<db:/ma_anagrafiche/ditte_commesse_fasi>}*/
 	var fsDitteCommFasi = databaseManager.getFoundSet(globals.Server.MA_ANAGRAFICHE, globals.Table.DITTE_COMMESSE_FASI);
 	if (fsDitteCommFasi.find()) {
 		fsDitteCommFasi.iddittacommessafase = idDittaCommessaFase;
@@ -2165,7 +2165,7 @@ function getDataFinaleFaseCommessa(idDittaCommessaFase) {
  * @properties={typeid:24,uuid:"EF8F7675-F08B-439A-A37A-A99AD3C46C27"}
  */
 function getMonteOreCommessa(idDittaCommessa) {
-	/** @type {JSFoundset<db:/ma_anagrafiche/ditte_commesse>}*/
+	/** @type {JSFoundSet<db:/ma_anagrafiche/ditte_commesse>}*/
 	var fsDitteComm = databaseManager.getFoundSet(globals.Server.MA_ANAGRAFICHE, globals.Table.DITTE_COMMESSE);
 	if (fsDitteComm.find()) {
 		fsDitteComm.iddittacommessa = idDittaCommessa;
@@ -2185,7 +2185,7 @@ function getMonteOreCommessa(idDittaCommessa) {
  * @properties={typeid:24,uuid:"3EDB7C62-69B4-4204-9643-1904B699D5AD"}
  */
 function getMonteOreFaseCommessa(idDittaCommessaFase) {
-	/** @type {JSFoundset<db:/ma_anagrafiche/ditte_commesse_fasi>}*/
+	/** @type {JSFoundSet<db:/ma_anagrafiche/ditte_commesse_fasi>}*/
 	var fsDitteCommFasi = databaseManager.getFoundSet(globals.Server.MA_ANAGRAFICHE, globals.Table.DITTE_COMMESSE_FASI);
 	if (fsDitteCommFasi.find()) {
 		fsDitteCommFasi.iddittacommessafase = idDittaCommessaFase;
@@ -2210,7 +2210,7 @@ function getMonteOreFaseCommessa(idDittaCommessaFase) {
 function getTotaleMonteOreCommessaDaFasi(idDittaCommessa,idDittaCommessaFase) 
 {
 	var totMonteOreDaFasi = 0;
-	/** @type {JSFoundset<db:/ma_anagrafiche/ditte_commesse_fasi>}*/
+	/** @type {JSFoundSet<db:/ma_anagrafiche/ditte_commesse_fasi>}*/
 	var fsDitteComm = databaseManager.getFoundSet(globals.Server.MA_ANAGRAFICHE, globals.Table.DITTE_COMMESSE_FASI);
 	if (fsDitteComm.find()) {
 		fsDitteComm.iddittacommessa = idDittaCommessa;
@@ -2239,7 +2239,7 @@ function getTotaleMonteOreCommessaDaFasi(idDittaCommessa,idDittaCommessaFase)
  * @properties={typeid:24,uuid:"26710EF3-DD93-470D-B1C4-61EBBC6ED1AE"}
  */
 function getChiusuraCommessa(idDittaCommessa) {
-	/** @type {JSFoundset<db:/ma_anagrafiche/ditte_commesse>}*/
+	/** @type {JSFoundSet<db:/ma_anagrafiche/ditte_commesse>}*/
 	var fsDitteComm = databaseManager.getFoundSet(globals.Server.MA_ANAGRAFICHE, globals.Table.DITTE_COMMESSE);
 	if (fsDitteComm.find()) {
 		fsDitteComm.iddittacommessa = idDittaCommessa;
@@ -2260,7 +2260,7 @@ function getChiusuraCommessa(idDittaCommessa) {
  * @properties={typeid:24,uuid:"76668719-91A6-4556-95C3-061088B101E8"}
  */
 function getChiusuraFaseCommessa(idDittaCommessaFase) {
-	/** @type {JSFoundset<db:/ma_anagrafiche/ditte_commesse_fasi>}*/
+	/** @type {JSFoundSet<db:/ma_anagrafiche/ditte_commesse_fasi>}*/
 	var fsDitteCommFasi = databaseManager.getFoundSet(globals.Server.MA_ANAGRAFICHE, globals.Table.DITTE_COMMESSE_FASI);
 	if (fsDitteCommFasi.find()) {
 		fsDitteCommFasi.iddittacommessafase = idDittaCommessaFase;
@@ -2281,7 +2281,7 @@ function getChiusuraFaseCommessa(idDittaCommessaFase) {
  * @properties={typeid:24,uuid:"FCC076A3-B88B-47CB-807D-6D9D9352C3CD"}
  */
 function getBloccanteFaseCommessa(idDittaCommessaFase) {
-	/** @type {JSFoundset<db:/ma_anagrafiche/ditte_commesse_fasi>}*/
+	/** @type {JSFoundSet<db:/ma_anagrafiche/ditte_commesse_fasi>}*/
 	var fsDitteCommFasi = databaseManager.getFoundSet(globals.Server.MA_ANAGRAFICHE, globals.Table.DITTE_COMMESSE_FASI);
 	if (fsDitteCommFasi.find()) {
 		fsDitteCommFasi.iddittacommessafase = idDittaCommessaFase;
@@ -2305,7 +2305,7 @@ function getBloccanteFaseCommessa(idDittaCommessaFase) {
  */
 function getFasePrecedente(idDittaCommessaFase)
 {
-	/** @type {JSFoundset<db:/ma_anagrafiche/ditte_commesse_fasi>}*/
+	/** @type {JSFoundSet<db:/ma_anagrafiche/ditte_commesse_fasi>}*/
 	var fsDitteCommFasi = databaseManager.getFoundSet(globals.Server.MA_ANAGRAFICHE, globals.Table.DITTE_COMMESSE_FASI);
 	if (fsDitteCommFasi.find()) {
 		fsDitteCommFasi.iddittacommessafase = idDittaCommessaFase;
@@ -2461,14 +2461,14 @@ function importaTracciatoOreCommesse(files) {
 
 		databaseManager.startTransaction();
 
-		/** @type {JSFoundset<db:/ma_log/operationuser>}*/
+		/** @type {JSFoundSet<db:/ma_log/operationuser>}*/
 		var fsOpUser = databaseManager.getFoundSet(globals.Server.MA_LOG, globals.Table.OPERATION_USER);
 		var recOpUser = fsOpUser.getRecord(fsOpUser.newRecord());
 		recOpUser.op_id = application.getUUID().toString().toLowerCase();
 		recOpUser.user_id = security.getUserName()
 		recOpUser.client_id = security.getClientID();
 
-		/** @type {JSFoundset<db:/ma_log/operationlog>}*/
+		/** @type {JSFoundSet<db:/ma_log/operationlog>}*/
 		var fsOpLog = databaseManager.getFoundSet(globals.Server.MA_LOG, globals.Table.OPERATION_LOG);
 		var recOpLogIndex = fsOpLog.newRecord();
 		if (recOpLogIndex != -1) {
@@ -2688,7 +2688,7 @@ function getStatoOreFaseCommessa(idLavoratore,giorno,idCommessaFase)
 {
 	// variabile numerica per l'identificazione dello stato a seconda delle proprietà delle ore
 	var stato = 0;
-	/** @type {JSFoundset<db:/ma_presenze/commesse_giornaliera_ore>} */
+	/** @type {JSFoundSet<db:/ma_presenze/commesse_giornaliera_ore>} */
 	var fs = databaseManager.getFoundSet(globals.Server.MA_PRESENZE,globals.Table.COMMESSE_ORE);
 	if(fs.find())
 	{
@@ -2726,7 +2726,7 @@ function getStatoOreFaseCommessa(idLavoratore,giorno,idCommessaFase)
  */
 function isStatoOreFaseCommessaConsolidato(idLavoratore,giorno,idCommessaFase)
 {
-	/** @type {JSFoundset<db:/ma_presenze/commesse_giornaliera_ore>} */
+	/** @type {JSFoundSet<db:/ma_presenze/commesse_giornaliera_ore>} */
 	var fs = databaseManager.getFoundSet(globals.Server.MA_PRESENZE,globals.Table.COMMESSE_ORE);
 	if(fs.find())
 	{
@@ -2756,7 +2756,7 @@ function isStatoOreFaseCommessaConsolidato(idLavoratore,giorno,idCommessaFase)
  */
 function consolidaStatoOreFaseCommessa(arrLavoratori,dal,al,idFaseCommessa)
 {
-	/** @type {JSFoundset<db:/ma_presenze/commesse_giornaliera_ore>}*/
+	/** @type {JSFoundSet<db:/ma_presenze/commesse_giornaliera_ore>}*/
 	var fs = databaseManager.getFoundSet(globals.Server.MA_PRESENZE,globals.Table.COMMESSE_ORE);
 	if(fs.find())
 	{
@@ -2792,7 +2792,7 @@ function consolidaStatoOreFaseCommessa(arrLavoratori,dal,al,idFaseCommessa)
  */
 function resettaStatoOreFaseCommessa(arrLavoratori,dal,al,idFaseCommessa)
 {
-	/** @type {JSFoundset<db:/ma_presenze/commesse_giornaliera_ore>}*/
+	/** @type {JSFoundSet<db:/ma_presenze/commesse_giornaliera_ore>}*/
 	var fs = databaseManager.getFoundSet(globals.Server.MA_PRESENZE,globals.Table.COMMESSE_ORE);
 	if(fs.find())
 	{
@@ -2981,7 +2981,7 @@ function inserisciOreCommessa(idLav,giornoIso,idDittaCommessaFase,ore,proprieta,
 			return true;
 		
 		// caso inserimento con indicazione del numero di ore
-		/** @type {JSFoundset<db:/ma_presenze/commesse_giornaliera>}*/
+		/** @type {JSFoundSet<db:/ma_presenze/commesse_giornaliera>}*/
 		var fsGiorn = databaseManager.getFoundSet(globals.Server.MA_PRESENZE, globals.Table.COMMESSE_GIORNALIERA);
 		/** @type {JSRecord<db:/ma_presenze/commesse_giornaliera>}*/
 		var recGiorn = databaseManager.getFoundSet(globals.Server.MA_PRESENZE, globals.Table.COMMESSE_GIORNALIERA);
@@ -3096,7 +3096,7 @@ function inserisciOreCommessa(idLav,giornoIso,idDittaCommessaFase,ore,proprieta,
  */
 function getOreGiornoDipendenteCommessa(idDittaCommessa, idLavoratore, giorno, soloConsolidate, soloAutorizzate, soloFatturabili) {
 	var totOreCommGiornoDip = null;
-	/** @type {JSFoundset<db:/ma_anagrafiche/ditte_commesse_fasi>} */
+	/** @type {JSFoundSet<db:/ma_anagrafiche/ditte_commesse_fasi>} */
 	var fsCommFasi = databaseManager.getFoundSet(globals.Server.MA_ANAGRAFICHE, globals.Table.DITTE_COMMESSE_FASI);
 	if (fsCommFasi.find()) {
 		fsCommFasi.iddittacommessa = idDittaCommessa;
@@ -3270,7 +3270,7 @@ function getTotOreCommesseGiornoDipendente(giorno,idLavoratore,soloConsolidate,s
 {
 	var totOreCommDip = 0;
 	
-	/** @type {JSFoundset<db:/ma_presenze/commesse_giornaliera_ore>}*/
+	/** @type {JSFoundSet<db:/ma_presenze/commesse_giornaliera_ore>}*/
 	var fsOre = databaseManager.getFoundSet(globals.Server.MA_PRESENZE, globals.Table.COMMESSE_ORE);
 	if(fsOre.find())
 	{
@@ -3564,7 +3564,7 @@ function compilaGiorniDaCommesse(employeesId,arrayGiorni,idDitta,periodo,operati
  */
 function getPeriodoInizialeGestionePresenze(idDitta)
 {
-	/** @type{JSFoundset<db:/ma_anagrafiche/ditte_presenze>} */
+	/** @type{JSFoundSet<db:/ma_anagrafiche/ditte_presenze>} */
 	var fsPres = databaseManager.getFoundSet(globals.Server.MA_ANAGRAFICHE,'ditte_presenze');
 	if(fsPres.find())
 	{
@@ -3587,7 +3587,7 @@ function getPeriodoInizialeGestionePresenze(idDitta)
  */
 function getPeriodoFinaleGestionePresenze(idDitta)
 {
-	/** @type{JSFoundset<db:/ma_anagrafiche/ditte_presenze>} */
+	/** @type{JSFoundSet<db:/ma_anagrafiche/ditte_presenze>} */
 	var fsPres = databaseManager.getFoundSet(globals.Server.MA_ANAGRAFICHE,'ditte_presenze');
 	if(fsPres.find())
 	{

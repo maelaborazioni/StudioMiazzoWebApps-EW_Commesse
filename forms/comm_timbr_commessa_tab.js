@@ -152,7 +152,7 @@ function onActionRefresh(event)
 	var recGcomm = globals.getGiornalieraCommessa(vIdLavoratore,utils.dateFormat(vGiorno,globals.ISO_DATEFORMAT),vIdCommessaFase);
 	if(!recGcomm)
 	{
-		/** @type {JSFoundset<db:/ma_presenze/commesse_giornaliera>}*/
+		/** @type {JSFoundSet<db:/ma_presenze/commesse_giornaliera>}*/
 		var fsGiorn = databaseManager.getFoundSet(globals.Server.MA_PRESENZE, globals.Table.COMMESSE_GIORNALIERA);
 		/** @type {JSRecord<db:/ma_presenze/commesse_giornaliera>}*/
 		var recGiorn = databaseManager.getFoundSet(globals.Server.MA_PRESENZE, globals.Table.COMMESSE_GIORNALIERA);
@@ -240,7 +240,7 @@ function onDataChangeCommessa(oldValue, newValue, event)
 	var arrFasi = [];
 	var arrFasiDesc = [];
 	
-	/** @type {JSFoundset<db:/ma_anagrafiche/ditte_commesse_fasi>}*/
+	/** @type {JSFoundSet<db:/ma_anagrafiche/ditte_commesse_fasi>}*/
 	var fsFasi = databaseManager.getFoundSet(globals.Server.MA_ANAGRAFICHE,'ditte_commesse_fasi');
 	if(fsFasi.find())
 	{

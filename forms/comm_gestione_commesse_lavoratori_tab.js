@@ -32,7 +32,7 @@ function onActionConferma(event)
 		// inserisci i lavoratori selezionati per la commessa nella tabella lavoratori_commesse
 		databaseManager.startTransaction();
 		
-		/** @type{JSFoundset<db:/ma_anagrafiche/lavoratori_commesse>} */
+		/** @type{JSFoundSet<db:/ma_anagrafiche/lavoratori_commesse>} */
 		var fsLavComm = databaseManager.getFoundSet(globals.Server.MA_ANAGRAFICHE,globals.Table.LAVORATORI_COMMESSE);
 		for (var lc = 0; lc < fs.getSize(); lc++)
 		{

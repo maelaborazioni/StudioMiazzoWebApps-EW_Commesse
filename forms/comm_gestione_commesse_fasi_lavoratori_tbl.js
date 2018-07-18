@@ -23,47 +23,47 @@ function eliminaLavoratoreFaseCommessa(event)
 	    return;
 	}
 	
-	var answer = globals.ma_utl_showYesNoQuestion('Inviare una mail per informare il dipendente?','Elimina lavoratore per la fase');
-	if(answer)
+	// recupera i valori di oggetto e testo del messaggio iniziale
+	var userId = globals.getUserIdFromIdLavoratore(idlavoratore,_to_sec_user$user_id.owner_id.toString());
+	
+	if(!userId)
 	{
-		// recupera i valori di oggetto e testo del messaggio iniziale
-		var userId = globals.getUserIdFromIdLavoratore(idlavoratore,_to_sec_user$user_id.owner_id.toString());
+		globals.ma_utl_showWarningDialog('Il lavoratore non ha associato un utente! Controllare la gestione utenze.','Elimina lavoratore per la fase');
+	    return; 
+	}
+	
+	if(userId && globals.ma_utl_showYesNoQuestion('Inviare una mail per informare il dipendente?','Elimina lavoratore per la fase'))
+	{		
+		var msg = 'plain msg<html><head></head><body>Gentile <b>' + globals.getNominativo(idlavoratore) + '</b>,<br/>'
+		msg += 'con la presente la informiamo che è stato rimosso dalla seguente fase : <br/><br/><b><i>';
+		msg += lavoratori_commesse_to_ditte_commesse_fasi.descrizionefase + '<br/>';
+		msg += '</i></b><br/> relativa alla commessa : <br/><br/><b><i>';
+		msg += lavoratori_commesse_to_ditte_commesse_fasi.ditte_commesse_fasi_to_ditte_commesse.descrizione;
+		msg += '</i></b><br/><br/>';
+		msg += '</i></b><br/> facente capo al cliente : <br/><br/><b><i>';
+		msg += lavoratori_commesse_to_ditte_commesse_fasi.ditte_commesse_fasi_to_ditte_commesse.ditte_commesse_to_ditte.ragionesociale;
+		msg += '</i></b><br/><br/>';
+		if(_to_sec_user$user_id.sec_user_to_sec_user_to_lavoratori && _to_sec_user$user_id.sec_user_to_sec_user_to_lavoratori.idlavoratore)
+		   msg += ' da parte del signor ' + globals.getNominativo(_to_sec_user$user_id.sec_user_to_sec_user_to_lavoratori.idlavoratore) + '.<br/><br/>';
+		msg += '<br/>';
+		msg += 'Cordiali saluti.';
+		msg += '</body></html>';
 		
-		if(userId)
+		// invio comunicazione
+		var userMail = globals.getMailUtente(userId);
+		if(userMail == '')
 		{
-			var msg = 'plain msg<html><head></head><body>Gentile <b>' + globals.getNominativo(idlavoratore) + '</b>,<br/>'
-			msg += 'con la presente la informiamo che è stato rimosso dalla seguente fase : <br/><br/><b><i>';
-			msg += lavoratori_commesse_to_ditte_commesse_fasi.descrizionefase + '<br/>';
-			msg += '</i></b><br/> relativa alla commessa : <br/><br/><b><i>';
-			msg += lavoratori_commesse_to_ditte_commesse_fasi.ditte_commesse_fasi_to_ditte_commesse.descrizione;
-			msg += '</i></b><br/><br/>';
-			msg += '</i></b><br/> facente capo al cliente : <br/><br/><b><i>';
-			msg += lavoratori_commesse_to_ditte_commesse_fasi.ditte_commesse_fasi_to_ditte_commesse.ditte_commesse_to_ditte.ragionesociale;
-			msg += '</i></b><br/><br/>';
-			if(_to_sec_user$user_id.sec_user_to_sec_user_to_lavoratori && _to_sec_user$user_id.sec_user_to_sec_user_to_lavoratori.idlavoratore)
-			   msg += ' da parte del signor ' + globals.getNominativo(_to_sec_user$user_id.sec_user_to_sec_user_to_lavoratori.idlavoratore) + '.<br/><br/>';
-			msg += '<br/>';
-			msg += 'Cordiali saluti.';
-			msg += '</body></html>';
-			
-			// invio comunicazione
-			var userMail = globals.getMailUtente(userId);
-			if(userMail == '')
-			{
-				globals.ma_utl_showWarningDialog('L\'utente non ha associato un indirizzo mail.','Elimina lavoratore per la fase');
-				return;
-			}
-			if(!plugins.mail.isValidEmailAddress(userMail))
-			{
-				globals.ma_utl_showWarningDialog('L\'utente non ha associato un indirizzo mail valido.','Elimina lavoratore per la fase');
-				return;
-			}
-			var vOggetto = 'Gestione commesse - ' + lavoratori_commesse_to_ditte_commesse_fasi.descrizionefase;
-			globals.sendMailAdviceToUser(userMail,vOggetto,msg,'Comunicazione gestione commesse <assistenza@studiomiazzo.it>');
-			
+			globals.ma_utl_showWarningDialog('L\'utente non ha associato un indirizzo mail.','Elimina lavoratore per la fase');
+			return;
 		}
-		else
-			globals.ma_utl_showWarningDialog('Il lavoratore non ha associato un utente! Controllare la gestione utenze.','Elimina lavoratore per la fase');
+		if(!plugins.mail.isValidEmailAddress(userMail))
+		{
+			globals.ma_utl_showWarningDialog('L\'utente non ha associato un indirizzo mail valido.','Elimina lavoratore per la fase');
+			return;
+		}
+		var vOggetto = 'Gestione commesse - ' + lavoratori_commesse_to_ditte_commesse_fasi.descrizionefase;
+		globals.sendMailAdviceToUser(userMail,vOggetto,msg,'Comunicazione gestione commesse <assistenza@studiomiazzo.it>');
+					
 	}
 	
     var frmLav = forms.comm_gestione_commesse_fasi_lavoratori_tab;
