@@ -63,7 +63,7 @@ function onActionConferma(event)
 			msgText += ".<br/> Comunicare al responsabile la correttezza dei dati o le eventuali modifiche da apportare."
 			msgText += "</body></html>";
 			var success = plugins.mail.sendMail(mailAddress
-								                ,'COmunicazione gestione commesse <assistenza@studiomiazzo.it>'
+								                ,'Comunicazione gestione commesse <noreply@peoplegest.it>'
 												,'Rapporto ore inserite Gestione Commesse'
 												,msgText
 												,null

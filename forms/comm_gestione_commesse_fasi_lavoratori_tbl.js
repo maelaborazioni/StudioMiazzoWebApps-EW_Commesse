@@ -62,7 +62,7 @@ function eliminaLavoratoreFaseCommessa(event)
 			return;
 		}
 		var vOggetto = 'Gestione commesse - ' + lavoratori_commesse_to_ditte_commesse_fasi.descrizionefase;
-		globals.sendMailAdviceToUser(userMail,vOggetto,msg,'Comunicazione gestione commesse <assistenza@studiomiazzo.it>');
+		globals.sendMailAdviceToUser(userMail,vOggetto,msg,'Comunicazione gestione commesse <noreply@peoplegest.it>');
 					
 	}
 	

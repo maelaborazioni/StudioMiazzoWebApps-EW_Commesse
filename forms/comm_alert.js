@@ -45,7 +45,7 @@ function onActionAnnulla(event)
 function onActionConferma(event)
 {
 	// gestione invio comunicazione inerente la fase della commessa
-	globals.sendMailAdviceToUser(vDestinatario,vOggetto,vMessaggio,'Comunicazione gestione commesse <assistenza@studiomiazzo.it>');
+	globals.sendMailAdviceToUser(vDestinatario,vOggetto,vMessaggio,'Comunicazione gestione commesse <noreply@peoplegest.it>');
 	globals.ma_utl_setStatus(globals.Status.BROWSE,controller.getName());
 	globals.svy_mod_closeForm(event);
 }
