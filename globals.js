@@ -2399,7 +2399,9 @@ function apriProgrammazioneCommesse(_event, _idditta, _anno, _mese, _grLav, _grI
 				             ' al ' + globals.dateFormat(ultimoGgSett,'dd/MM'));
 		}
 		application.setValueListItems('vls_settimane',arrDescSett,arrSett); 
-		frmSel.vSettimana = globals.getWeekNumber(today);
+		/**Object { int week, int year }*/
+		var dayStruct = globals.getWeekNumber(today);
+		frmSel.vSettimana = dayStruct['week'];
 		frmSel.vDal = globals.getDateOfISOWeek(frmSel.vSettimana,today.getFullYear());
 		frmSel.vAl = new Date(frmSel.vDal.getFullYear(), frmSel.vDal.getMonth(), frmSel.vDal.getDate() + 6);
 		frmSel.vAnno = today.getFullYear();
@@ -3420,7 +3422,7 @@ function compilaGiorniDaCommesse(employeesId,arrayGiorni,idDitta,periodo,operati
 		var oreEv;
 		
 		// inizializzazione parametri per la compilazione
-		var params = globals.inizializzaParametriCompilaConteggio
+		var params = globals.inizializzaParametriCompila
         (
 	          idDitta
 	      	  ,periodo
@@ -3428,18 +3430,17 @@ function compilaGiorniDaCommesse(employeesId,arrayGiorni,idDitta,periodo,operati
 			  ,globals.TipoConnessione.CLIENTE
 			  ,arrayGiorni
 			  ,employeesId
-			  ,false
          );
 		
 		// lancio del calcolo per la compilazione teorico 
-		var url = WS_URL + "/Eventi/CompilaDalAlSingolo"
+		var url = WS_EVENT + "/Calendar32/CompilaDalAlSingoloSync"
 		
 		//teniamo traccia dei dipendenti che sono stati modificati e che risulteranno da chiudere
 		if(!scopes.giornaliera.cancellaChiusuraDipPerOperazione(employeesId, idDitta,periodo))
 			return;
 		
 		var objResp = globals.getWebServiceResponse(url, params);
-		if(objResp.returnValue == false)
+		if(objResp.ReturnValue == false)
 			throw new Error('Compilazione teorica non effettuata correttamente!');
 		
 		databaseManager.startTransaction();
@@ -3486,7 +3487,7 @@ function compilaGiorniDaCommesse(employeesId,arrayGiorni,idDitta,periodo,operati
 					else
 						idEv = 480 //672; // SD straordinario da definire 
 						
-					var arrProp = globals.getProprietaSelezionabili(idEv,employeesId[l],periodo,arrayGiorni[g],globals.TipoGiornaliera.NORMALE);	
+					var arrProp = globals.getProprietaSelezionabili(idEv,employeesId[l],periodo,arrayGiorni[g],globals.TipoGiornaliera.NORMALE).ReturnValue;	
 					propEv = globals.getCodiceProprieta(arrProp);
 					oreEv = isFestivo ? oreComm : oreComm - oreTeo;
 				}
@@ -3506,7 +3507,6 @@ function compilaGiorniDaCommesse(employeesId,arrayGiorni,idDitta,periodo,operati
 					         (
 					        	idDitta
 								, periodo
-								, 0
 								, [arrayGiorni[g]]
 								, globals.TipoGiornaliera.NORMALE
 								, globals.TipoConnessione.CLIENTE
