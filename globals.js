@@ -2399,7 +2399,9 @@ function apriProgrammazioneCommesse(_event, _idditta, _anno, _mese, _grLav, _grI
 				             ' al ' + globals.dateFormat(ultimoGgSett,'dd/MM'));
 		}
 		application.setValueListItems('vls_settimane',arrDescSett,arrSett); 
-		frmSel.vSettimana = globals.getWeekNumber(today);
+		/**Object { int week, int year }*/
+		var dayStruct = globals.getWeekNumber(today);
+		frmSel.vSettimana = dayStruct['week'];
 		frmSel.vDal = globals.getDateOfISOWeek(frmSel.vSettimana,today.getFullYear());
 		frmSel.vAl = new Date(frmSel.vDal.getFullYear(), frmSel.vDal.getMonth(), frmSel.vDal.getDate() + 6);
 		frmSel.vAnno = today.getFullYear();
