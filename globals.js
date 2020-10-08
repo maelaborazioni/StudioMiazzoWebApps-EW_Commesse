@@ -3433,7 +3433,7 @@ function compilaGiorniDaCommesse(employeesId,arrayGiorni,idDitta,periodo,operati
          );
 		
 		// lancio del calcolo per la compilazione teorico 
-		var url = WS_EVENT + "/Calendar32/CompilaDalAlSingoloSync"
+		var url = WS_CALENDAR + "/Calendar32/CompileSingleSync"
 		
 		//teniamo traccia dei dipendenti che sono stati modificati e che risulteranno da chiudere
 		if(!scopes.giornaliera.cancellaChiusuraDipPerOperazione(employeesId, idDitta,periodo))
